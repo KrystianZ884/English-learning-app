@@ -11,8 +11,6 @@ def add_new(txt_eng, txt_pol):
         file.close()
 
 
-
 def read_file():
     file = open("words.txt", "r")
     print(file.read())
-
