@@ -1,4 +1,4 @@
-from features import word_spliter
+import features
 import random
 
 
@@ -6,8 +6,8 @@ def main_game():
     points = 0
     tries = 0
 
-    while tries != 0:
-        eng_txt, pol_txt = word_spliter()
+    while True:
+        eng_txt, pol_txt = features.word_spliter()
         random_int = random.randint(0, 1)
 
         if random_int == 0:
@@ -25,7 +25,3 @@ def main_game():
                 points += 1
             else:
                 tries += 1
-
-
-
-main_game()
