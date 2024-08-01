@@ -1,3 +1,4 @@
+import datetime
 import random
 
 # \/ \/  \/ Main Menu features \/   \/  \/
@@ -29,14 +30,14 @@ def randomizer():
 def word_spliter():
     eng_pol_text = randomizer()
     eng_txt = eng_pol_text[:eng_pol_text.find(":")]
-    pol_txt = eng_pol_text[eng_pol_text.find(":") + 1 :]
+    pol_txt = eng_pol_text[eng_pol_text.find(":") + 1:]
     return eng_txt, pol_txt[:pol_txt.find("\n")]
 
 
 def add_new_record(points, tries):
-    entry = str(points) + " / " + str(tries)
+    date = str(datetime.datetime.today())
+    entry = str(date[:date.find(".")]) + ": " + str(points) + " / " + str(tries)
     file = open("history.txt", "a")
     file.write(entry)
     file.write("\r")
     file.close()
-

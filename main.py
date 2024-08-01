@@ -22,6 +22,7 @@ def main():
         elif int(choice) == 3:
             points, tries = main_game()
             print(f"Score is {points} / {tries}")
+            features.add_new_record(points, tries)
             break
 
 
