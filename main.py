@@ -20,9 +20,12 @@ def main():
             features.read_file()
 
         elif int(choice) == 3:
-            main_game()
+            points, tries = main_game()
+            print(f"Score is {points} / {tries}")
+            break
 
-        elif int(choice == 4):
+
+        elif int(choice) == 4:
             break
 
 

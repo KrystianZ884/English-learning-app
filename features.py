@@ -1,7 +1,7 @@
-import json
 import random
 
 # \/ \/  \/ Main Menu features \/   \/  \/
+
 
 def add_new(txt_eng, txt_pol):
     entry = txt_eng + ":" + txt_pol
@@ -31,3 +31,12 @@ def word_spliter():
     eng_txt = eng_pol_text[:eng_pol_text.find(":")]
     pol_txt = eng_pol_text[eng_pol_text.find(":") + 1 :]
     return eng_txt, pol_txt[:pol_txt.find("\n")]
+
+
+def add_new_record(points, tries):
+    entry = str(points) + " / " + str(tries)
+    file = open("history.txt", "a")
+    file.write(entry)
+    file.write("\r")
+    file.close()
+
