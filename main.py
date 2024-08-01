@@ -1,10 +1,11 @@
 import features
+from game import main_game
 
 
 def main():
     print("1. Add new word/phrase")
     print("2. Display the list of words/phrases")
-    print("3. Play a game (TBD)")
+    print("3. Play a game")
     print("4. Close the app")
 
     choice = input("Choose an action: ")
@@ -18,7 +19,14 @@ def main():
         elif int(choice) == 2:
             features.read_file()
 
-        elif int(choice == 4):
+        elif int(choice) == 3:
+            points, tries = main_game()
+            print(f"Score is {points} / {tries}")
+            features.add_new_record(points, tries)
+            break
+
+
+        elif int(choice) == 4:
             break
 
 
