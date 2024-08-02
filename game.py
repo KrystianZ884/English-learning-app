@@ -12,7 +12,7 @@ def main_game():
 
         if random_int == 0:
             shot = input(f"{eng_txt}: ")
-            if shot == pol_txt:
+            if shot.lower() == pol_txt.lower()3:
                 print("Correct")
                 points += 1
                 tries += 1
@@ -23,7 +23,7 @@ def main_game():
 
         if random_int == 1:
             shot = input(f"{pol_txt}: ")
-            if shot == eng_txt:
+            if shot.lower() == eng_txt.lower():
                 print("Correct")
                 points += 1
                 tries += 1
