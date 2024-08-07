@@ -12,8 +12,13 @@ def add_new(txt_eng, txt_pol):
     file.close()
 
 
-def read_file():
+def read_word_file():
     file = open("words.txt", "r")
+    print(file.read())
+
+
+def read_history_file():
+    file = open("history.txt", "r")
     print(file.read())
 
 
