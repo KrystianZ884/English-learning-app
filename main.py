@@ -2,6 +2,7 @@ import features
 from game import main_game
 
 
+
 def main():
     print("1. Add new word/phrase")
     print("2. Display the list of words/phrases")
