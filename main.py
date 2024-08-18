@@ -1,5 +1,5 @@
 import features
-from game import main_game
+from rework import main_game
 
 
 
@@ -22,9 +22,7 @@ def main():
             features.read_word_file()
 
         elif int(choice) == 3:
-            points, tries = main_game()
-            print(f"Score is {points} / {tries}")
-            features.add_new_record(points, tries)
+            main_game(1)
             break
 
         elif int(choice) == 4:

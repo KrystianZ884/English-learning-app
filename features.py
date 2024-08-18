@@ -1,5 +1,6 @@
 import datetime
 import random
+import rework
 
 # \/ \/  \/ Main Menu features \/   \/  \/
 
@@ -46,3 +47,26 @@ def add_new_record(points, tries):
     file.write(entry)
     file.write("\r")
     file.close()
+
+
+def ask_to_leave_decor(func):
+    def wrapper(*args, **kwargs):
+        func(*args, *kwargs)
+        ask_to_leave = input("Would you like to continue?: [N] ")
+        if ask_to_leave.lower().strip() == "n":
+            print(f"Your score is {rework.points}/{rework.tries}")
+            add_new_record(rework.points, rework.tries)
+            return rework.main_game(0)
+    return wrapper
+
+
+@ask_to_leave_decor
+def game_mode_eng(eng_txt, pol_txt):
+    guess = input(f"{pol_txt}: ")
+    if guess.lower() == eng_txt.lower():
+        print("Correct")
+        rework.points += 1
+        rework.tries += 1
+    else:
+        print(f"Error: {eng_txt}")
+        rework.tries =+ 1
