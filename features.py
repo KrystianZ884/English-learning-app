@@ -69,4 +69,4 @@ def game_mode_eng(eng_txt, pol_txt):
         rework.tries += 1
     else:
         print(f"Error: {eng_txt}")
-        rework.tries =+ 1
+        rework.tries += 1
